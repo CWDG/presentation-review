@@ -16,4 +16,9 @@ class Presentation extends Eloquent {
 		return $this->hasMany('Review');
 	}
 
+	public function comments()
+	{
+		return $this->hasManyThrough('Comment', 'Review');
+	}
+
 }
