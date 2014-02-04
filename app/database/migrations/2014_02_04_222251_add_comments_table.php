@@ -13,7 +13,6 @@ class AddCommentsTable extends Migration {
 	public function up()
 	{
 		Schema::create('comments', function($t) {
-			$t->engine = 'InnoDB';
 			$t->increments('id');
 			$t->text('comment');
 			$t->integer('review_id')->unsigned();

@@ -13,7 +13,6 @@ class AddReviewsTable extends Migration {
 	public function up()
 	{
 		Schema::create('reviews', function($t) {
-			$t->engine = "InnoDB";
 			$t->increments('id');
 			$t->integer('score')->unsigned();
 			$t->integer('presentation_id')->unsigned();

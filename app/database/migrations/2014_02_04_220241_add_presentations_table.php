@@ -13,7 +13,6 @@ class AddPresentationsTable extends Migration {
 	public function up()
 	{
 		Schema::create('presentations', function($t) {
-			$t->engine = 'InnoDB';
 			$t->increments('id');
 			$t->string('name');
 			$t->string('slug')->unique();
