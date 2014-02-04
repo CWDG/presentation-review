@@ -5,9 +5,9 @@
 
 <ul>
 	@foreach($presentations as $pres)
-		<li>{{ link_to_action($pres->name, 'PresentationController@show', [$pres->id]) }}</li>		
+		<li>{{ link_to_action( 'PresentationController@show', $pres->name, [$pres->id]) }}</li>		
 	@endforeach
 </ul>
 
-{{ $presentations->links(); }}
+{{ $presentations->links() }}
 @stop

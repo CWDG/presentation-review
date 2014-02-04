@@ -32,7 +32,20 @@ class PresentationController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$validation = Validator::make(Input::get(), [
+			'name' => 'required',
+			'slug' => 'required|min:5|unique:presentations',
+		]);
+
+		if ($validation->fails()) {
+			return Redirect::back()->withInput(Input::get())->withErrors($validation)->withErrorMessage("Couldn't save presentation, please correct and try again.");
+		}
+
+		$presentation = new Presentation(Input::get());
+
+		$presentation->save();
+
+		return Redirect::action('PresentationController@index')->withMessage('Saved successfully.');
 	}
 
 	/**
@@ -43,7 +56,7 @@ class PresentationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+
 	}
 
 	/**
