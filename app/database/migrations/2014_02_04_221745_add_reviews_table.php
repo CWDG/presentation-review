@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPresentationsTable extends Migration {
+class AddReviewsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,13 @@ class AddPresentationsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('presentations', function($t) {
-			$t->engine = 'InnoDB';
+		Schema::create('reviews', function($t) {
 			$t->increments('id');
-			$t->string('name');
-			$t->string('slug')->unique();
-			$t->text('additional_info')->default('');
+			$t->integer('score')->unsigned();
+			$t->integer('presentation_id')->unsigned();
 			$t->timestamps();
+
+			$t->foreign('presentation_id')->references('id')->on('presentations')->onDelete('cascade')->onUpdate('cascade');
 		});
 	}
 
@@ -29,7 +29,7 @@ class AddPresentationsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('presentations');
+		Schema::drop('reviews');
 	}
 
 }
