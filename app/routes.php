@@ -11,6 +11,8 @@
 |
 */
 
+Route::resource('presentation', 'PresentationController');
+
 Route::get('/', function()
 {
 	return View::make('index');
