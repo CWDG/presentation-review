@@ -9,7 +9,7 @@ class Review extends Eloquent {
 	 */
 	protected $table = 'reviews';
 	
-	protected $fillable = ['score'];
+	protected $fillable = ['score', 'presentation_id'];
 
 	public function presentation() 
 	{

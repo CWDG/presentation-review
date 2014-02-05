@@ -56,12 +56,12 @@ class PresentationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$presentation = Presentation::find($id);
+		$presentation = Presentation::with('reviews')->find($id);
 		if (empty($presentation)) {
 			App::abort(404);
 		}
-
-		return View::make('presentation.show')->withPresentation($presentation);
+		$review = new Review();
+		return View::make('presentation.show')->with(compact('presentation', 'review'));
 	}
 
 	/**

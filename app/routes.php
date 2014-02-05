@@ -12,6 +12,7 @@
 */
 
 Route::resource('presentation', 'PresentationController');
+Route::resource('presentation.review', 'ReviewController');
 
 Route::get('/p/{slug}', function($slug) {
 	$presentation = Presentation::whereSlug($slug)->first();
