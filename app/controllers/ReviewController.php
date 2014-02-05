@@ -37,7 +37,7 @@ class ReviewController extends \BaseController {
 		if (empty($presentation)) {
 			App::abort(404);
 		}
-
+		
 		if ($validation->fails()) {
 			return Redirect::back()->withErrorMessage('Please try again.')->withErrors($validation)->withInput(Input::get());
 		}
