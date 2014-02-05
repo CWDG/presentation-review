@@ -13,6 +13,16 @@
 
 Route::resource('presentation', 'PresentationController');
 
+Route::get('/p/{slug}', function($slug) {
+	$presentation = Presentation::whereSlug($slug)->first();
+
+	if ($presentation) {
+		return Redirect::action('PresentationController@show', [$presentation->id]);
+	}
+
+	App::abort(404);
+});
+
 Route::get('/', function()
 {
 	return View::make('index');
