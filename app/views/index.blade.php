@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-<h1>Bootstrap starter template</h1>
-<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<h1>Presentation Reviews</h1>
+<p class="lead">Review Presentations in real time!</p>
+
+<p>Still in alpha.  Like halfway to a patent alpha.</p>
 @stop
 

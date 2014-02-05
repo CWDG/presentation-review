@@ -38,7 +38,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
+						<li>{{ link_to_action("PresentationController@create", "Add Presentation") }}</li>						
+						<li>{{ link_to_action("PresentationController@index", "Presentations") }}</li>						
           </ul>
         </div><!--/.nav-collapse -->
       </div>
