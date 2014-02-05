@@ -56,7 +56,12 @@ class PresentationController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		$presentation = Presentation::find($id);
+		if (empty($presentation)) {
+			App::abort(404);
+		}
 
+		return View::make('presentation.show')->withPresentation($presentation);
 	}
 
 	/**
