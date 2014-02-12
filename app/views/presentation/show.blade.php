@@ -5,10 +5,16 @@
 <p class="lead">{{ link_to('/p/' . $presentation->slug, url('/p/' . $presentation->slug)) }}</p>
 <p>{{{ $presentation->additional_info }}}</p>
 @if (!$presentation->reviews->isEmpty()) 
-<h2>Ratings</h2>
-<ul>
-	@foreach($presentation->reviews as $rev)
-	<li>{{ $rev->score }}</li>
+<h2>Current rating: {{{ number_format($average_score, 2) }}}</h2>
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{{ $average_score }}}" aria-valuemin="0" aria-valuemax="100" style="width: {{{ number_format($average_score) }}}%">
+    <span class="sr-only">{{{ $average_score }}}% Complete (success)</span>
+  </div>
+</div>
+<h3>Recent scores</h3>
+<ul class="scores">
+	@foreach($presentation->reviews()->orderBy('created_at', 'desc')->take(25)->get() as $rev)
+<li>{{ $rev->score }} <em>{{{ $rev->created_at->diffForHumans() }}}</em></li>
 	@endforeach
 </ul>
 @endif

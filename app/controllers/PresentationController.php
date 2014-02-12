@@ -61,7 +61,8 @@ class PresentationController extends \BaseController {
 			App::abort(404);
 		}
 		$review = new Review();
-		return View::make('presentation.show')->with(compact('presentation', 'review'));
+		$average_score = $presentation->reviews()->avg('score');
+		return View::make('presentation.show')->with(compact('presentation', 'review', 'average_score'));
 	}
 
 	/**

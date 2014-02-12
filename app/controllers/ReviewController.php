@@ -54,7 +54,7 @@ class ReviewController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($presentaion_id, $review_id)
 	{
 		//
 	}
@@ -65,7 +65,7 @@ class ReviewController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($presentaion_id, $review_id)
 	{
 		//
 	}
@@ -76,7 +76,7 @@ class ReviewController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($presentaion_id, $review_id)
 	{
 		//
 	}
@@ -87,7 +87,7 @@ class ReviewController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($presentaion_id, $review_id)
 	{
 		//
 	}
