@@ -9,7 +9,7 @@ class PresentationController extends \BaseController {
 	 */
 	public function index()
 	{
-		$presentations = Presentation::paginate(20);
+		$presentations = Presentation::orderBy('created_at', 'des')->paginate(20);
 
 		return View::make('presentation.index')->with(compact('presentations'));
 	}
