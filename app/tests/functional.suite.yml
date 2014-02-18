@@ -8,4 +8,8 @@
 
 class_name: TestGuy
 modules:
-    enabled: [Laravel4, TestHelper]
+    enabled: [Laravel4, TestHelper, Db]
+    config:
+        Db:
+            populate: true
+            cleanup: true
