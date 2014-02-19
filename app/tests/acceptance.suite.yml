@@ -16,7 +16,7 @@ modules:
         - Db
     config:
         PhpBrowser:
-            url: 'http://presentation-review.loc'
+            url: 'http://presentation-review.dev'
         Db:
             populate: true
             cleanup: true
